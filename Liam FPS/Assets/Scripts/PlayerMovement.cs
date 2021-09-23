@@ -10,6 +10,15 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
+    public bool isSprinting = false;
+    public float sprintingMultiplier;
+
+    public bool isCrouching = false;
+    public float crouchingMultiplier;
+
+    public float crouchingHeight = 1f;
+    public float standingHeight = 1.8f;
+
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -33,10 +42,28 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            isSprinting = true;
+        }
+        else
+        {
+            isSprinting = false;
+        }
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
+
+        if (isSprinting == true)
+        {
+            speed = 20f;
+        }
+        else
+        {
+            speed = 12f;
+        }
 
         controller.Move(move * speed * Time.deltaTime);
 
@@ -48,5 +75,25 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.C))
+        {
+            isCrouching = true;
+        }
+        else
+        {
+            isCrouching = false;
+        }
+
+        if (isCrouching == true)
+        {
+            controller.height = crouchingHeight;
+            speed -= 10f;
+        }
+        else
+        {
+            controller.height = standingHeight;
+        }
+
     }
 }
