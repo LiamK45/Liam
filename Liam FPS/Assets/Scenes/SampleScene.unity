@@ -463,12 +463,9 @@ MonoBehaviour:
   speed: 12
   gravity: -19.62
   jumpHeight: 3
+  cylinder: {fileID: 138951985}
   isSprinting: 0
-  sprintingMultiplier: 2
   isCrouching: 0
-  crouchingMultiplier: 0
-  crouchingHeight: 1
-  standingHeight: 1.8
   groundCheck: {fileID: 1405120068}
   groundDistance: 0.4
   groundMask:
@@ -694,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9501ecfd1ae18fa4faa79a19a476a912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 1000
 --- !u!65 &747678214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1347,7 +1344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1300817857
 GameObject:
@@ -6498,7 +6495,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1676898117
 GameObject:
@@ -6641,7 +6638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9501ecfd1ae18fa4faa79a19a476a912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 5000
 --- !u!65 &1792889878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6716,7 +6713,7 @@ Transform:
   m_LocalScale: {x: 50, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1852760748
 GameObject:
@@ -6906,7 +6903,7 @@ RectTransform:
   m_Children:
   - {fileID: 1300817858}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
