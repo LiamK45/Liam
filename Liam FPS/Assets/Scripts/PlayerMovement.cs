@@ -9,15 +9,16 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
-    public GameObject cylinder;
-   
-    private Vector3 scaleChange;
+
+    public Camera fpsCam;
 
     public bool isSprinting = false;
-    public bool isCrouching = false;
 
-    //public float crouchingHeight = 1.2f;
-    //public float standingHeight = 1.8f;
+    public bool isCrouching = false;
+    public float crouchingMultiplier;
+
+    public float crouchingHeight = 1.25f;
+    public float standingHeight = 1.8f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scaleChange = new Vector3(0, -0.8f, 0);
+
     }
 
     // Update is called once per frame
@@ -76,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
+        /*
         if (Input.GetKey(KeyCode.C))
         {
             isCrouching = true;
@@ -87,11 +89,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (isCrouching == true)
         {
-            cylinder.transform.localScale += scaleChange;
+            controller.height = crouchingHeight;
+            speed = 6f;
         }
         else
         {
-
+            controller.height = standingHeight;
+            speed = 12f;
         }
+        */
     }
 }
